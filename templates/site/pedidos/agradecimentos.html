@@ -1,0 +1,50 @@
+<!doctype html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="{% static "/css/background.css" %}" rel="stylesheet" media="all">
+
+    <title>AzMel</title>
+</head>
+<body>
+
+<div class="container text-center" style="margin-top: 30px" >
+
+    <div class="row">
+        <div class="col-sm-4">
+
+        </div>
+        <div class="col-sm-4 align-self-center">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Solicitação feita</h5>
+                    <p class="card-text">Clique na imagem abaixo ou escaneie com o app do PicPay</p>
+                </div>
+                <div class="card-header">
+                    <a href="https://picpay.me/phdeveloper/{{ pedido.total }}">
+                        <img class="card-img-top" src="{% static "/images/PicPay.jpg" %}" alt="Card image cap">
+                    </a>
+
+                </div>
+
+                <div class="card-footer text-muted text-center">
+                        <a class="btn btn-danger btn-sm" href="{% url 'delete_pedido' pedido.id%}">Cancelar Pedido</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

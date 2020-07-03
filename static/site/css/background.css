@@ -1,0 +1,17 @@
+html,
+body {
+    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+
+
+}
+.margin{
+  margin-top: 30px;
+
+}

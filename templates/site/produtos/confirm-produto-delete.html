@@ -1,0 +1,26 @@
+{% extends 'site/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="card">
+            <div class="card-body card-block">
+                <form action="" method="post" enctype="multipart/form-data" class="">
+                    {% csrf_token %}
+                    <h3>Tem certeza que deseja remover {{ pedido.nome }}?</h3>
+                    <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="fa fa-dot-circle-o"></i> Confirmar
+                    </button>
+                    <a class="btn btn-warning btn-sm"
+                       href="{% url 'update_pedido' pedido.id%}">Cancelar</a>
+
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+
+{% endblock %}
+

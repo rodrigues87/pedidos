@@ -1,0 +1,51 @@
+{% extends 'site/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="card">
+            <div class="card-body card-block">
+
+
+                <form action="" method="post" enctype="multipart/form-data" class="">
+                    {% csrf_token %}
+
+                    <div class="row">
+                        <div class="col-6">
+                            {{ form.nome|as_crispy_field }}
+                        </div>
+                        <div class="col-6">
+                            {{ form.quantidade_em_estoque|as_crispy_field }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            {{ form.preco_compra|as_crispy_field }}
+                        </div>
+                        <div class="col-6">
+                            {{ form.preco_venda|as_crispy_field }}
+                        </div>
+                    </div>
+                    {{ form.descricao|as_crispy_field }}
+
+
+                    <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="fa fa-dot-circle-o"></i> Salvar
+                    </button>
+                        <a class="btn btn-warning btn-sm" href="{% url 'list_produtos'%}">Cancelar</a>
+
+                    {% if produto %}
+
+                        <a class="btn btn-danger btn-sm" href="{% url 'delete_produto' produto.id%}">Delete</a>
+
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+
+{% endblock %}
+
